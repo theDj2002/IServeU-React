@@ -1,51 +1,30 @@
-import "./App.css";
-import Button from "./components/Button";
-import Toggle from "./components/Toogle";
-import TextMirror from "./components/TextMirror";
-import HoverBox from "./components/HoverBox";
-import TrafficLight from "./components/TrafficLight";
-import TodoList from "./components/TodoList";
-
-import { FaReact, FaCode, FaMagic } from "react-icons/fa";
+import React, { useState } from 'react'
+import Card from './components/Card'
+import ThemeButton from './components/ThemeButton'
+import './App.css'
 
 function App() {
+  const [isDark, setIsDark] = useState(false)
+
   return (
-    <div className="app">
+    <div className={isDark ? 'app darkApp' : 'app lightApp'}>
       <div className="overlay"></div>
 
-      <header className="hero">
-        <div className="hero-badge">
-          <FaReact className="hero-icon spin" />
-          <span>React Practice • Day 2</span>
+      <div className="content">
+        <div className="intro">
+          <p className="tag">React CSS Modules Assignment</p>
+          <h1>Modern UI Components</h1>
+          <p className="subtitle">
+            A professional card component and a dynamic theme switcher built
+            using React + CSS Modules.
+          </p>
         </div>
 
-        <h1>React Assignments Day-2</h1>      
-      </header>
-
-      <section className="section">
-        <div className="section-heading">
-          {/* <span className="section-badge">Core Concept</span> */}
-          <h2 className="section-title">1. Props</h2>
-        </div>
-
-        <div className="button-row">
-          <Button label="Click Me" color="linear-gradient(135deg, #7c3aed, #a855f7)" />
-          <Button label="Submit" color="linear-gradient(135deg, #16a34a, #22c55e)" />
-          <Button label="Delete" color="linear-gradient(135deg, #dc2626, #ef4444)" />
-        </div>
-      </section>
-
-      <div className="grid">
-        <Toggle />
-        <TextMirror />
-        <HoverBox />
-        <TrafficLight color="red" />
-        <TrafficLight color="yellow" />
-        <TrafficLight color="green" />
-        <TodoList />
+        <Card isDark={isDark} />
+        <ThemeButton isDark={isDark} setIsDark={setIsDark} />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
