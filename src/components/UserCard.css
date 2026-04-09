@@ -1,0 +1,78 @@
+.user-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.user-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.user-avatar {
+  min-width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7b00, #ffb347);
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.35);
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.username {
+  color: #ffb347;
+  margin: 6px 0 14px;
+  font-weight: 600;
+}
+
+.user-meta {
+  display: grid;
+  gap: 8px;
+  color: #d8d8d8;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.view-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #ff7b00, #ff9f43);
+  color: white;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 123, 0, 0.35);
+}
+
+@media (max-width: 600px) {
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
